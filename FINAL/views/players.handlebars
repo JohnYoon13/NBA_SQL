@@ -1,0 +1,171 @@
+<table>
+    <thead> 
+        <th>ID</th> 
+        <th>Player's First Name</th> 
+        <th>Player's Last Name</th> 
+        <th>Player's Age</th>  
+    </thead> 
+    <tbody> 
+        {{#each players}} 
+        <tr> 
+            <td>{{players.id}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{age}}</td>
+            <td><button onclick="deletePlayer({{id}})">Delete</button></td>
+            <td><a href="/players/{{id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addplayers" action="/players" method="post">
+    Add Player's First name: <input type="text" name="fname"><br>
+    Add Player's Last name: <input type="text" name="lname"><br>
+    Choose Team: <select name="name"> 
+        {{#each teams}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    Add Coach: <select name="coach"> 
+        {{#each coaches}}
+        <option value="{{id}}">{{lname}}</option>
+        {{/each}}
+    </select><br>
+    Add Age: <input type="number" name="age"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <thead> 
+        <th></th>  
+    </thead> 
+    <tbody> 
+        <td></td> 
+    </tbody> 
+</table> 
+
+
+
+<table>
+    <thead> 
+        <th>Coach's First Name</th> 
+        <th>Coach's Last Name</th> 
+        <th>Coach's Age</th>  
+    </thead> 
+    <tbody> 
+        {{#each coaches}} 
+        <tr> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{age}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addcoaches" action="/coaches" method="post">
+    Add Coach's First name: <input type="text" name="fname"><br>
+    Add Coach's Last name: <input type="text" name="lname"><br>
+    Add Coach's Age: <input type="number" name="age"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <thead> 
+        <th></th>  
+    </thead> 
+    <tbody> 
+        <td></td> 
+    </tbody> 
+</table> 
+
+
+
+
+
+<table>
+    <thead> 
+        <th>Team's Name</th> 
+        <th>Team's City</th> 
+    </thead> 
+    <tbody> 
+        {{#each teams}} 
+        <tr> 
+            <td>{{name}}</td> 
+            <td>{{city}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addteams" action="/teams" method="post">
+    Add Team's Name: <input type="text" name="name"><br>
+    Add Team's City: <input type="text" name="city"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <thead> 
+        <th></th>  
+    </thead> 
+    <tbody> 
+        <td></td> 
+    </tbody> 
+</table> 
+
+
+
+<table>
+    <thead> 
+        <th>Positions</th> 
+    </thead> 
+    <tbody> 
+        {{#each positions}} 
+        <tr> 
+            <td>{{name}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="addpositions" action="/positions" method="post">
+    Add Position: <input type="text" name="name"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <thead> 
+        <th></th>  
+    </thead> 
+    <tbody> 
+        <td></td> 
+    </tbody> 
+</table> 
+
+
+
+
+
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Position</th> 
+    </thead> 
+    <tbody> 
+        {{#each player_positions}} 
+        <tr> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td>{{name}}</td> 
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <form id="player_positions" action="/player_positions" method="post">
+    Add Player's ID: <input type="number" name="player_id"><br>
+    Add Position's ID: <input type="number" name="position_id"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <thead> 
+        <th></th>  
+    </thead> 
+    <tbody> 
+        <td></td> 
+    </tbody> 
+</table> 
+
+
